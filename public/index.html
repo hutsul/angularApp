@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <title>Test</title>
+
+    <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css" />
+    <link rel="stylesheet" href="bower_components/angular-material/angular-material.css" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" />
+    <link rel="stylesheet" href="css/main.css" />
+</head>
+<body ng-app="eventApp" ng-controller="EventAppController as eventList" ng-cloak>
+    <div class="wrapper" >
+        <header class="header_nav">
+            <md-fab-toolbar md-theme="customTheme" >
+                <md-fab-trigger class="align-with-text" md-direction="left">
+                    <md-button aria-label="menu" class="md-fab header_nav_btn">
+                        <md-icon md-font-icon="fa-cogs" class="fa"></md-icon>
+                    </md-button>
+                </md-fab-trigger>
+                <md-toolbar>
+                    <md-fab-actions class="md-toolbar-tools" >
+                        <md-button ng-href="#/" aria-label="comment" class="md-icon-button header_nav_item md-fab md-mini">
+                            <md-icon md-font-icon="fa-home" class="fa"></md-icon>
+                        </md-button>
+                        <md-button aria-label="label" class="md-icon-button header_nav_item md-fab md-mini" ng-click="loginDialog()">
+                            <md-icon md-font-icon="fa-sign-in" class="fa"></md-icon>
+                        </md-button>
+                        <md-button aria-label="photo" ng-click="addEvent()" class="md-icon-button header_nav_item md-fab md-mini">
+                            <md-icon md-font-icon="fa-plus" class="fa"></md-icon>
+                        </md-button>
+                    </md-fab-actions>
+                </md-toolbar>
+            </md-fab-toolbar>
+
+        </header>
+        <div class="main-content" >
+            <ng-view></ng-view>
+        </div>
+    </div>
+    <script src="bower_components/jquery/dist/jquery.js"></script>
+    <script src="bower_components/angular/angular.js"></script>
+    <script src="bower_components/angular-route/angular-route.js"></script>
+    <!--<script src="bower_components/bootstrap/dist/js/bootstrap.js"></script>-->
+    <script src="bower_components/angular-animate/angular-animate.min.js"></script>
+    <script src="bower_components/angular-aria/angular-aria.min.js"></script>
+    <script src="bower_components/angular-messages/angular-messages.min.js"></script>
+    <script src="bower_components/angular-material/angular-material.js"></script>
+
+
+    <script src="./app/core/core.module.js"></script>
+    <script src="./app/core/core.route.js"></script>
+
+    <script src="templates/home/home.module.js"></script>
+    <script src="templates/home/home.controller.js"></script>
+
+    <script src="templates/events/event.module.js"></script>
+    <script src="templates/events/event.controller.js"></script>
+
+    <script src="templates/modal/modal.module.js"></script>
+    <script src="templates/modal/modal.controller.js"></script>
+
+    <script src="./app/app.js"></script>
+</body>
+</html>

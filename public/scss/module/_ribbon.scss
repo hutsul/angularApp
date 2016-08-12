@@ -1,0 +1,26 @@
+.ribbon {
+  display: inline-block;
+  position: absolute;
+  top: 100%;
+  left: 20px;
+  width: auto;
+  height: auto;
+  min-height: auto;
+  border-radius: 3px;
+  margin-top: 15px;
+  padding: 5px 10px;
+  text-transform: capitalize;
+  z-index: 10;
+  &.draft {
+    background: $ribbonDraft;
+  }
+  &.open {
+    background: $ribbonOpen;
+  }
+  &.closed {
+    background: $ribbonClosed;
+  }
+  &.soldOut {
+    background: $ribbonSoldOut;
+  }
+}

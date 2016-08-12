@@ -1,0 +1,29 @@
+.header_nav {
+  position: relative;
+  background-color: $headerBg;
+  .header_nav_btn {
+    .fa {
+      font-size: 35px;
+      line-height: 22px;
+      color: $white !important;
+    }
+  }
+  .header_nav_item {
+    .fa {
+      font-size: 25px;
+      line-height: 10px;
+      color: $white;
+    }
+  }
+  .header_role {
+    position: absolute;
+    top: 50%;
+    right: 25px;
+    margin-top: -15px;
+    font-size: 30px;
+    color: $white;
+  }
+  md-fab-trigger {
+    margin-left: 20px;
+  }
+}

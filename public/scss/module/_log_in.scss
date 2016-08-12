@@ -1,0 +1,9 @@
+
+.login {
+  .login_content {
+    @extend %cardPadding;
+  }
+  .switcher {
+    justify-content: center;
+  }
+}

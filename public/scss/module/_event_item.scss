@@ -1,0 +1,118 @@
+.event_item {
+  height: 700px;
+
+  .card_title {
+    @extend %cardPadding;
+    position: relative;
+    max-height: 60px;
+    background-color: $cardTitle;
+    color: $cardText;
+    flex-basis: 60px;
+    flex-shrink: 0;
+    .card-text {
+      overflow: hidden;
+    }
+    .md-headline {
+      @extend %text-overflow;
+      text-transform: uppercase;
+      font-size: 28px;
+    }
+
+  }
+  md-card-content {
+    position: relative;
+    padding: 0;
+    flex-grow: 1;
+    .register {
+      position: absolute;
+      top: 15px;
+      right: 25px;
+      background: $white !important;
+      transition: all .7s cubic-bezier(0.4, 0.0, 0.2, 1);
+      .fa {
+        font-size: 30px;
+        line-height:56px;
+        vertical-align: top;
+        color: $cardIcon;
+      }
+      .check, .times {
+        display: none;
+      }
+      &.active {
+        top: 25%;
+        right: 50%;
+        margin-right: -27px;
+      }
+      &.success {
+        background-color: $successBG !important;
+        .fa {
+          color: $white;
+        }
+      }
+      &.error {
+        background-color: $errorBG !important;
+      }
+    }
+    .card-media {
+      min-width: 100%;
+      max-height: 300px;
+      overflow: hidden;
+      img {
+        transition: all .5s;
+        width: 100%;
+      }
+    }
+    .short_description {
+      @extend %cardPadding;
+      background-color: $cardTitle;
+      flex-grow: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      p {
+        overflow: hidden;
+        color: $white;
+        font-size: 20px;
+        flex-basis: 80%;
+      }
+    }
+    .event_info {
+      flex-basis: 20%;
+      .fa {
+        font-size: 30px;
+        color: $white;
+      }
+    }
+    .footer_card {
+      div {
+        flex: 1 1 0;
+        color: $cardText;
+        text-align: center;
+        .end_event {
+          display: inline-block;
+          width: 100%;
+          font-weight: 600;
+          text-transform: uppercase;
+        }
+         i, span {
+          font-size: 18px;
+        }
+      }
+    }
+  }
+  md-card-actions {
+    @extend %cardPadding;
+    margin: 0;
+    background-color: $black;
+  }
+  &:hover {
+    md-card-content {
+      .card-media {
+        img {
+          transform: scale(1.1);
+        }
+      }
+    }
+
+  }
+}

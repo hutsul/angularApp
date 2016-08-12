@@ -1,0 +1,128 @@
+.choose_event {
+  .title_img {
+    position: relative;
+    height: 160px;
+    overflow: hidden;
+    img {
+      width: 100%;
+    }
+    .ribbon {
+      position: absolute;
+      top: 20px;
+      left: 25px;
+    }
+    .title_event {
+      position: absolute;
+      top: 20%;
+      left: 0;
+      right: 0;
+      margin: 0 auto;
+      font-size: 35px;
+      font-weight: 500;
+      color: $white;
+      text-align: center;
+      text-shadow: 2px 2px 1px rgba($black, 1);
+    }
+    .event_info {
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      z-index: 100;
+      .event_list {
+        background-color: rgba($black, .3) !important;
+        border-radius: 5px;
+        padding: 10px 5px;
+      }
+    }
+    .event_list {
+      display: flex;
+      flex-direction: row;
+      text-align: center;
+      justify-content: center;
+      align-items: center;
+      .event_list_item {
+        margin: 0;
+        width: 100px;
+        padding: 5px;
+        .text, .fa {
+          display: inline-block;
+          width: 100%;
+          color: $white;
+        }
+        .fa {
+          font-size: 20px;
+          float: left;
+        }
+        .md-fab {
+          background: $white;
+        }
+        .register {
+          &.success {
+            background-color: $successBG !important;
+            .fa {
+              color: $white;
+            }
+          }
+          &.error {
+            background-color: $errorBG !important;
+          }
+        }
+        md-icon {
+          &.fa {
+            line-height: 25px;
+            vertical-align: top;
+            font-size: 20px;
+            color: $cardIcon;
+            float: none;
+            &.check {
+              .check, .times {
+                display: none;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+  .content_block{
+    margin-top: 25px;
+    p {
+      font-size: 18px;
+      padding: 0 15px;
+    }
+  }
+}
+
+@media (min-width: 992px){
+  .choose_event {
+    .title_img {
+      height: 500px;
+      .title_event {
+        top: 70%;
+        left: 15%;
+        right: auto;
+        margin: 0;
+        font-size: 55px;
+        font-weight: 500;
+        color: $white;
+        text-align: center;
+        text-shadow: 2px 2px 1px rgba($black, 1);
+      }
+      .event_info {
+        top: 15%;
+        bottom: auto;
+        left: auto;
+        width: 64px;
+        right: 5%;
+      }
+      .event_list {
+        flex-direction: column;
+        .event_list_item {
+          margin: 5px 0;
+          width: auto;
+        }
+      }
+    }
+  }
+}

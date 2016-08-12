@@ -1,0 +1,47 @@
+{
+  "name": "shopexpress",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://hutsul@bitbucket.org/hutsul/shopexpress.git"
+  },
+  "author": "tony",
+  "license": "MIT",
+  "homepage": "https://bitbucket.org/hutsul/shopexpress#readme",
+  "overrides": {
+    "bootstrap": {
+      "main": [
+        "less/bootstrap.less",
+        "dist/css/bootstrap.css",
+        "dist/js/bootstrap.js"
+      ]
+    }
+  },
+  "dependencies": {
+    "body-parser": "^1.14.2",
+    "connect-mongo": "^1.2.0",
+    "express": "^4.13.3",
+    "grunt": "^1.0.1",
+    "gulp": "^3.9.1",
+    "gulp-concat": "^2.6.0",
+    "gulp-cssnano": "^2.1.2",
+    "gulp-jshint": "^2.0.0",
+    "gulp-pixrem": "^1.0.0",
+    "gulp-postcss": "^6.1.0",
+    "gulp-sass": "^2.2.0",
+    "gulp-sourcemaps": "^1.6.0",
+    "gulp-uglify": "^1.5.3",
+    "gulp-watch": "^4.3.5",
+    "jshint": "^2.9.1",
+    "jshint-stylish": "^2.2.0",
+    "mongo": "^0.1.0",
+    "mongoose": "^4.4.19",
+    "pixrem": "^3.0.1"
+  }
+}

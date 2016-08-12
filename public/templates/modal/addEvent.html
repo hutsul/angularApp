@@ -1,0 +1,130 @@
+<md-dialog ng-cloak >
+    <md-content >
+        <md-toolbar class="md-warn">
+            <div class="md-toolbar-tools">
+                <h2 class="md-flex">Add new User</h2>
+            </div>
+        </md-toolbar>
+        <div>
+            <form name="eventForm" layout-padding>
+                <div layout-gt-xs="row">
+                    <md-input-container class="md-block" flex-gt-xs>
+                        <label>Title</label>
+                        <input ng-model="event.addEvent.title" name="title" required>
+                        <div ng-messages="eventForm.title.$error">
+                            <div ng-message="required">This is required.</div>
+                        </div>
+                    </md-input-container>
+                </div>
+                <div layout-gt-xs="row">
+                    <md-input-container class="md-block" flex-gt-xs>
+                        <label>Short Description</label>
+                        <textarea ng-model="event.addEvent.shortDescription" name="shortDescription" required minlength="10"></textarea>
+                        <div ng-messages="eventForm.shortDescription.$error">
+                            <div ng-message="required">This is required.</div>
+                        </div>
+                    </md-input-container>
+                </div>
+                <div layout-gt-xs="row">
+                    <md-input-container class="md-block" flex-gt-xs>
+                        <label>Description</label>
+                        <textarea ng-model="event.addEvent.description" name="description" required minlength="10"></textarea>
+                        <div ng-messages="eventForm.description.$error">
+                            <div ng-message="required">This is required.</div>
+                        </div>
+                    </md-input-container>
+                </div>
+                <div layout-gt-xs="row">
+                    <md-datepicker ng-model="event.addEvent.startDate" name="startDate"  md-placeholder="Enter Start Date" ></md-datepicker>
+
+                    <md-datepicker ng-model="event.addEvent.endDate" name="endDate" md-placeholder="Enter End Date" ></md-datepicker>
+
+                </div>
+                <div layout-gt-xs="row">
+                    <md-input-container class="md-block" flex-gt-xs>
+                        <label>Status</label>
+                        <md-select ng-model="event.addEvent.userStatus" name="userStatus">
+                            <md-option ng-repeat="status in event.statusList" value="{{status.status}}" required>
+                                <md-option ng-value="status.status">{{status.status}}</md-option>
+                            </md-option>
+                            <div class="errors" ng-messages="eventForm.userStatus.$error" ng-if="myForm.$dirty">
+                                <div ng-message="required">Required</div>
+                            </div>
+                        </md-select>
+                    </md-input-container>
+                    <md-input-container class="md-block" flex-gt-xs>
+                        <label>Registration Limit</label>
+                        <textarea ng-model="event.addEvent.regLimit" name="regLimit" ng-pattern="/[0-9]$/" required></textarea>
+                        <div ng-messages="eventForm.regLimit.$error">
+                            <div ng-message="required">This is required.</div>
+                            <div ng-message="pattern">You can use only numbers</div>
+                        </div>
+                    </md-input-container>
+                </div>
+                <div layout-gt-xs="row">
+                    <md-input-container class="md-block" flex-gt-xs>
+                        <label>Session</label>
+                        <input ng-model="event.addEvent.session" name="session" required>
+                        <div ng-messages="eventForm.session.$error">
+                            <div ng-message="required">This is required.</div>
+                        </div>
+                    </md-input-container>
+                </div>
+                <div layout-gt-xs="row" ng-show="event.followers">
+                    <md-input-container class="md-block" flex-gt-xs>
+                        <label>Users</label>
+                        <md-select ng-model="event.addEvent.followers" name="followers"
+                                   md-on-close="clearSearchTerm()"
+                                   data-md-container-class="selectdemoSelectHeader"
+                                   multiple>
+                            <md-select-header class="demo-select-header">
+                                <input ng-model="event.addEvent.followers"
+                                       type="search"
+                                       placeholder="All users"
+                                       class="demo-header-searchbox _md-text">
+                            </md-select-header>
+                            <md-optgroup label="User List">
+                                <md-option class="text-capitalize" ng-selected="isSelected(user._id)" ng-value="user._id" ng-repeat="user in event.usersList | filter:searchTerm">{{user.firstName}}&nbsp;{{user.lastName}}</md-option>
+                            </md-optgroup>
+                        </md-select>
+                    </md-input-container>
+                </div>
+                <md-dialog-actions layout-align="center center"  layout-wrap layout="row">
+
+                    <md-button
+                            class="md-button md-raised md-prime md-hue-1"
+                            ng-click="addFollowers()">
+                        Add users
+                    </md-button>
+
+                </md-dialog-actions>
+                <md-dialog-actions layout-align="center center"  layout-wrap layout="row">
+
+                    <md-button
+                            ng-hide="event.updateBtn"
+                            class="md-button md-raised md-prime md-hue-1"
+                            ng-click="addNewEvent()"
+                            ng-disabled="eventForm.$invalid">
+
+                        Submit
+                    </md-button>
+                    <md-button
+                            ng-show="event.updateBtn"
+                            class="md-button md-raised md-prime md-hue-1"
+                            ng-click="putUpdate()"
+                            ng-disabled="eventForm.$invalid">
+
+
+                        Update
+                    </md-button>
+                    <md-button
+                            class="md-button md-raised md-prime md-hue-1"
+                            ng-click="close()">
+                        Close
+                    </md-button>
+                </md-dialog-actions>
+            </form>
+        </div>
+    </md-content>
+
+</md-dialog>

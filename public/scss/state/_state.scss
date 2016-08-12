@@ -1,0 +1,20 @@
+.success {
+  background-color: $successBG !important;
+  .fa {
+    line-height:56px;
+    font-size: 30px;
+    vertical-align: top;
+  }
+}
+
+md-datepicker {
+  margin-right: 0;
+}
+
+.success_dialog {
+  width: 250px;
+  height: 250px;
+  md-dialog-actions {
+    padding-left: 0;
+  }
+}

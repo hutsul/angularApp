@@ -1,0 +1,48 @@
+<div class="container-fluid" >
+    <div class="row" >
+        <div class="col-xs-12 col-sm-6 col-md-4" ng-repeat="event in events" md-theme="customTheme">
+            <md-card data-id="{{event._id}}" class="event_item md-whiteframe-7dp" >
+                <md-card-title class="card_title">
+                    <md-card-title-text class="card-text">
+                        <span class="md-headline " ng-attr-title="{{event.title}}">{{event.title}}</span>
+                        <div class="ribbon " ng-class="statusRibbon($index)">
+                            <span class="status_text">{{event.status}}</span>
+                        </div>
+                    </md-card-title-text>
+                </md-card-title>
+                <md-card-content layout="column">
+                    <md-button class="md-fab register"  aria-label="Register" ng-click="registration($event, $index)">
+                        <md-icon md-font-icon="fa-star" class="fa star"></md-icon>
+                        <md-icon md-font-icon="fa-check" class="fa check"></md-icon>
+                        <md-icon md-font-icon="fa-times" class="fa times"></md-icon>
+                    </md-button>
+                    <div class="card-media">
+                        <img ng-src="http://www.nativeacoustics.com/wp-content/uploads/Live-Event-Recording.jpg" class="md-card-image" alt="Washed Out">
+                    </div>
+                    <div class="short_description">
+                        <p>{{event.shortDescription}}</p>
+                        <div class="event_info" layout="row" layout-align="center center" layout-wrap>
+                            <md-button class="md-icon-button" aria-label="Favorite" ng-href="#events/{{event._id}}?" /*ng-click="eventList.selectTab($index)*/">
+                                <md-icon md-font-icon="fa-eye" class="fa"></md-icon>
+                            </md-button>
+                        </div>
+                    </div>
+                    <md-card-actions class="footer_card" layout="row" layout-align="center center"  layout-wrap>
+                        <div class="date">
+                            <span class="end_event">Start : </span>
+                            <span>{{event.startDate | date:"MMM d y"}}</span>
+                        </div>
+                        <div class="reg_limit">
+                            <i class="fa fa-male" aria-hidden="true"></i>
+                            <span>{{event.regLimit}}</span>
+                        </div>
+                        <div class="ream_seats">
+                            <i class="fa fa-users" aria-hidden="true"></i>
+                            <span>{{event.followers.length}}</span>
+                        </div>
+                    </md-card-actions>
+                </md-card-content>
+            </md-card>
+        </div>
+    </div>
+</div>
