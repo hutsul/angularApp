@@ -1,1 +1,11 @@
+/public/css/*.map
+dist
+node_modules
+.tmp
+bower_components
 # Created by .ignore support plugin (hsz.mobi)
+### Node template
+# Logs
+logs
+*.log
+npm-debug.log*
